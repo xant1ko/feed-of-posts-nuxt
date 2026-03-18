@@ -1,6 +1,7 @@
 <template>
-
-    INDEX
+    <section class="py-5">
+        <h2 class="text-center">go to '/posts'</h2>
+    </section>
 
 </template>
 

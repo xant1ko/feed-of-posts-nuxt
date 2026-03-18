@@ -1,18 +1,36 @@
 <template>
-
     <header>
         <ul>
             <li>
-                <NuxtLink to="posts">Посты</NuxtLink>
+                <RouterLink to="/posts">Посты</RouterLink>
             </li>
         </ul>
     </header>
-    <slot></slot>
+    <main>
+
+        <slot></slot>
 
 
+    </main>
+
+    <footer>
+        <p class="text-center text-white m-0">Все права защищены</p>
+    </footer>
 </template>
 
 <style>
+main {
+    background-color: rgb(216, 219, 255);
+    min-height: 100vh;
+}
+
+footer {
+    background-color: rgb(0, 9, 92);
+
+    padding: 20px;
+
+}
+
 header {
     background-color: rgb(0, 9, 92);
     font-size: xx-large;
