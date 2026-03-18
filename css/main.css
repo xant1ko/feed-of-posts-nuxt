@@ -1,0 +1,35 @@
+body {
+    margin: 0%;
+}
+
+.bg-post-header {
+    background-color: rgb(12, 23, 122);
+}
+
+.bg-post-primary {
+    background-color: rgb(184, 191, 255);
+}
+
+.bg-post-primary.btn:hover {
+    background-color: rgb(107, 114, 172);
+}
+
+.icon {
+    background-color: rgb(87, 87, 87);
+    color: aliceblue;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 60px;
+}
+
+.align-center {
+    align-items: center;
+}
+
+h3 {
+    width: fit-content !important;
+    margin: 0;
+}

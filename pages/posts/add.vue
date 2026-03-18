@@ -3,7 +3,7 @@
         <h1 class="text-center mb-5">Добавить пост</h1>
 
         <div class="bg-post-primary p-5 rounded-4">
-            <form>
+            <form @submit.prevent="sendData">
                 <div class="form-group">
                     <label>Никнейм</label>
                     <input v-model="dataToSend.user.login" class="form-control" placeholder="Введите имя">
@@ -27,7 +27,7 @@
                     <textarea v-model="dataToSend.description" class="form-control" rows="3"
                         placeholder="Опишите тему"></textarea>
                 </div>
-                <button @click="sendData();" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </section>
@@ -38,10 +38,22 @@ import type { PostType } from '~/types/types';
 
 // const router = useRouter()
 
+const poststore = usePostsStore()
 
+const sendData = async () => {
+    try {
 
-const sendData = () => {
-    usePostsStore().sendNewPost(dataToSend.value)
+        const currentDate = new Date
+        dataToSend.value.date = currentDate.toLocaleString()
+        // alert(JSON.stringify(dataToSend.value));
+
+        poststore.sendNewPost(dataToSend.value)
+
+        return navigateTo('/posts')
+    } catch (e) {
+        console.log(e);
+
+    }
 }
 
 
